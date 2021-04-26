@@ -14,4 +14,4 @@ It has the following funcionalities:
 
 -    A comment section, you must be logged in to comment
 
-Hosted link:
+Hosted link: https://safe-retreat-09681.herokuapp.com/
