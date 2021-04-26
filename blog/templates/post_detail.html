@@ -1,42 +1,32 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
+{% block content %}
 
 <div class="container">
     <div class="row">
-        {% if user.is_authenticated %}
-        <h1>Welcome {{user.username}}</h1>
+        <div class="col-lg-12 col-md-12 mx-auto my-auto">
+            <div class="post-preview">
+                <a href="">
+                    <h2 class="post-title">
+                        <a href="">{{ post.title}}</a>
+                    </h2>
+                    <h5 class="post-subtitle">{{post.body}}</h5>
+                    <hr />
+                </a>
+            </div>
+            {% for comment in post.comments.all %}
+                <div class="comment mt-5">
+                    <h4 class="title">
+                        Comments:
+                    </h4>
+                    
+                    <span>{{ comment.author }}</span>
+                    <p>{{ comment.text}}</p>
 
-        <button class="m-2 btn-success"><a href="{% url 'logout' %}">Log out</a></button>
-        <button class="m-2 btn-success"><a href="{% url 'password_reset' %}">Reset Password</a> </button>{% else %}
-
-        <button class="m-2 btn-success"><a href="{% url 'login' %}">Log In</a></button>
-        <button class="m-2 btn-success"><a href="{% url 'signup' %}">Sign Up</a></button> {% endif %}
-    </div>
-    <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="post-preview">
-            <a href="">
-                <h2 class="post-title">
-                    <a href="">{{ post.title}}</a>
-                </h2>
-                <h3 class="post-subtitle">{{post.body}}</h3>
-                <hr />
-            </a>
-        </div>
-        {% for comment in post.comments.all %}
-        <div class="comment">
-            <strong>{{ comment.author }}</strong>
-            <p>{{ comment.text|linebreaks }}</p>
-
-            <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a
-		>
-	</div>
-	{% empty %}
-	<p>No comments here yet :(</p>
-	{% endfor %}
-
-	    <p>
-		<a href="{% url 'post_edit' post.pk%}">+ Edit Blog Post</a>
-            </p>
-            <p><a href="{% url 'post_delete' post.pk %}">+ Delete Blog Post</a></p>
+                    <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
+                </div>
+            {% empty %}
+                <p>No comments here yet :(</p>
+            {% endfor %}
         </div>
     </div>
 </div>

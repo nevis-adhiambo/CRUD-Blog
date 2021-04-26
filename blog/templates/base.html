@@ -36,24 +36,27 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'home' %}">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'home' %}">Sample Post</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'signup' %}">signup</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'login' %}">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'post_new' %}">+ New Post</a>
-                        </li>
+                        {% if not user.is_authenticated %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'signup' %}">Signup</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'login' %}">Login</a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'post_new' %}">+ New Post</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                            </li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
         </nav>
 
-        <header class="masthead" style="background-image: url('../static/img/home-bg.jpg')">
+        <header class="masthead" style="background-image: url('{% static 'img/home-bg.jpg' %}')">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row">
