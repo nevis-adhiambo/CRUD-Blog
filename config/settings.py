@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = True
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1", "safe-retreat-09681.herokuapp.com"]
 
 
 # Application definition
@@ -131,7 +131,7 @@ STATICFILES_DIR = [
     BASE_DIR / "blog/static"
 ]
 #linking the static css files
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 # Default primary key field type

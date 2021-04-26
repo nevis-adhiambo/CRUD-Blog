@@ -37,19 +37,19 @@
                             <a class="nav-link" href="{% url 'home' %}">Home</a>
                         </li>
                         {% if not user.is_authenticated %}
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'signup' %}">Signup</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'login' %}">Login</a>
-                            </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'signup' %}">Signup</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'login' %}">Login</a>
+                        </li>
                         {% else %}
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'post_new' %}">+ New Post</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-                            </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'post_new' %}">+ New Post</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                        </li>
                         {% endif %}
                     </ul>
                 </div>
