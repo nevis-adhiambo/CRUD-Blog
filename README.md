@@ -23,7 +23,7 @@
 
 Hosted link: https://safe-retreat-09681.herokuapp.com/
 
-### To get it running on your local machine, follow the steps below:
+### <b>To get it running on your local machine, follow the steps below:</b>
 
 <br>
 
