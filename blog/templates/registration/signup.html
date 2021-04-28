@@ -7,12 +7,6 @@
 			{% csrf_token %}
 
 			<div class="form-group mt-5">
-				<label for="form-errors">Form Errors: </label> {% if forms.errors %}
-				<p class="alert alert-danger">{{ forms.errors }}</p>
-				{% endif %}
-			</div>
-
-			<div class="form-group mt-5">
 				<label for="username"> Username: </label>
 				<br />
 				{{ form.username }}
