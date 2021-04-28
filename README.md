@@ -1,9 +1,9 @@
 
 
-# <b>Zuri-CRUD-Blog</b>
+## <b>Zuri-CRUD-Blog</b>
 
 
-#### This is a blog built on Django to ptactice on CRUD operatations. This is a simgle blog website. Users can create account, login, create new article, update and delete new article.
+#### This is a blog built on Django to practice on CRUD operatations. This is a simgle blog website. Users can create account, login, create new article, update and delete new article.
 
 
 
@@ -18,7 +18,9 @@
 
 
 <br>
+
 ## <b>Platform Hosted</b>
+
 Hosted link: https://safe-retreat-09681.herokuapp.com/
 
 ### To get it running on your local machine, follow the steps below:
